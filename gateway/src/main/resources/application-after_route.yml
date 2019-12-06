@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    discovery:
+      enabled: true
+    gateway:
+      routes:
+        - id: prod_route
+          uri: http://localhost:8012
+          predicates:
+            - Path=/foo/**
+          filters:
+            - StripPrefix=1
+  profiles: after_route
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka/

@@ -15,6 +15,7 @@
         <module>product-view-service-feign</module>
         <module>hystrix-dashboard</module>
         <module>turbine</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
